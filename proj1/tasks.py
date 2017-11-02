@@ -21,3 +21,19 @@ def sendmail(mail):
 def getdate(tm):
     print 'current time [%s]' % (str(tm['tm']))
     time.sleep(2.0)
+
+
+# 增加两个task,test_queue_1与test_queue_2
+@app.task
+def test_queue_1():
+    return 'queue1'
+
+
+@app.task
+def test_queue_2():
+    return 'queue2'
+
+# 广播
+@app.task
+def test_broadcast():
+    return 'broadcast'
