@@ -11,6 +11,7 @@ BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
 
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour.
+CELERY_IGNORE_RESULT = True
 
 # queue_1与queue_2为消息队列名称
 # Exchange:为交换机实例，具有不同的类型。详细参考

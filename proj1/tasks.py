@@ -33,7 +33,17 @@ def test_queue_1():
 def test_queue_2():
     return 'queue2'
 
+
 # 广播
 @app.task
 def test_broadcast():
     return 'broadcast'
+
+
+@app.task(bind=True, default_retry_delay=300, max_retries=5)
+def my_task_A(self):
+    try:
+        print("doing stuff here...")
+    except Exception as e:
+        print("maybe do some clenup here....")
+        self.retry(e)
