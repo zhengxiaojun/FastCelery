@@ -10,10 +10,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 <AsyncResult: 0864c3f7-8787-48c9-87b2-7241e780b664>
 
 
-# 脚本命令  celery -A proj1 worker -B --loglevel=info
+脚本命令  celery -A proj1 worker -B --loglevel=info
 
-# web监控命令   celery flower --port=5555 --broker=redis://127.0.0.1:6379/0
+web监控命令   celery flower --port=5555 --broker=redis://127.0.0.1:6379/0
 
-# 队列命令,优先级别
-# celery -A proj1 worker -Q queue_1 --loglevel=info
-# celery -A proj1 worker -Q queue_2 --loglevel=info
+队列命令,优先级别
+celery -A proj1 worker -Q queue_1 --loglevel=info
+celery -A proj1 worker -Q queue_2 --loglevel=info
